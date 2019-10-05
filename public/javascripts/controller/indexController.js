@@ -54,6 +54,7 @@ app.controller('indexController',['$scope','indexFactory',($scope,indexFactory)=
                    };
                     $scope.messages.push(messageData);
                     $scope.players[data.id]=data;
+                    scrollTop();
                     $scope.$apply();
                 });
 
@@ -68,6 +69,7 @@ app.controller('indexController',['$scope','indexFactory',($scope,indexFactory)=
 
                     $scope.messages.push(messageData);
                     delete $scope.players[data.id];
+                    scrollTop();
                     $scope.$apply();
                 });
                 socket.on('animate',data=>{
